@@ -26,9 +26,25 @@ const Home = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column - Fingerprint */}
-          <div className="lg:col-span-1">
+          {/* Left Column - Fingerprint & Privacy */}
+          <div className="lg:col-span-1 space-y-6">
             <FingerprintDisplay fingerprint={fingerprintData.fingerprint} />
+            
+            {/* Privacy Meter */}
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
+              <h3 className="font-medium mb-2">Privacy Exposure</h3>
+              <div className="w-full bg-gray-100 rounded-full h-2.5">
+                <div 
+                  className="bg-red-500 h-2.5 rounded-full transition-all duration-500" 
+                  style={{ width: `${fingerprintData.plugins.length > 0 ? '75%' : '45%'}` }}
+                ></div>
+              </div>
+              <p className="text-xs mt-2 text-gray-500">
+                {fingerprintData.plugins.length > 0 
+                  ? "High (Advanced fingerprinting enabled)" 
+                  : "Medium (Basic fingerprinting)"}
+              </p>
+            </div>
           </div>
           
           {/* Right Column - Info Cards */}
@@ -71,7 +87,7 @@ const Home = () => {
               />
               <InfoCard 
                 title="Browser Plugins" 
-                value={fingerprintData.plugins.join(', ')} 
+                value={fingerprintData.plugins.join(', ') || 'Enable advanced mode to see plugins'} 
                 icon="🔌"
               />
             </div>

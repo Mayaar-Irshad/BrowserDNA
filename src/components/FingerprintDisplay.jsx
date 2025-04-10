@@ -1,6 +1,6 @@
 const FingerprintDisplay = ({ fingerprint }) => {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-full">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
       <div className="text-center">
         <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <svg className="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -8,6 +8,25 @@ const FingerprintDisplay = ({ fingerprint }) => {
           </svg>
         </div>
         <h3 className="text-lg font-semibold text-gray-900 mb-2">Your Browser Fingerprint</h3>
+        
+        {/* Visual Fingerprint Grid */}
+        <div className="flex justify-center my-4">
+          <div className="grid grid-cols-5 gap-2 w-40">
+            {fingerprint.split('').slice(0,10).map((char, i) => (
+              <div 
+                key={i}
+                className="h-8 rounded-md flex items-center justify-center font-mono font-bold"
+                style={{
+                  backgroundColor: `hsl(${(i * 30) % 360}, 70%, 80%)`,
+                  color: `hsl(${(i * 30) % 360}, 70%, 30%)`
+                }}
+              >
+                {char}
+              </div>
+            ))}
+          </div>
+        </div>
+        
         <div className="bg-gray-50 p-3 rounded-lg mb-4">
           <code className="text-sm font-mono text-indigo-600 break-all">{fingerprint}</code>
         </div>
