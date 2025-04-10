@@ -1,18 +1,22 @@
-import { useState } from 'react';
-import useFingerprint from '../hooks/useFingerprint';
-import FingerprintDisplay from '../components/FingerprintDisplay';
-import InfoCard from '../components/InfoCard';
-import ToggleSwitch from '../components/ToggleSwitch';
+import { useState } from "react";
+import useFingerprint from "../hooks/useFingerprint";
+import FingerprintDisplay from "../components/FingerprintDisplay";
+import InfoCard from "../components/InfoCard";
+import ToggleSwitch from "../components/ToggleSwitch";
 
 const Home = () => {
   const [advancedMode, setAdvancedMode] = useState(false);
   const fingerprintData = useFingerprint(advancedMode);
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 flex justify-between items-center">
-          <h2 className="text-xl font-semibold text-gray-800">Browser Information</h2>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Header Section */}
+        <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">Browser Information</h2>
+            <p className="text-gray-600">Detailed analysis of your browser characteristics</p>
+          </div>
           <ToggleSwitch 
             label="Advanced Fingerprinting" 
             enabled={advancedMode} 
@@ -20,46 +24,58 @@ const Home = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <FingerprintDisplay fingerprint={fingerprintData.fingerprint} />
-          
-          <div className="grid grid-cols-1 gap-4">
-            <InfoCard 
-              title="User Agent" 
-              value={fingerprintData.userAgent} 
-            />
-            <InfoCard 
-              title="Screen Resolution" 
-              value={fingerprintData.screenResolution} 
-            />
-            <InfoCard 
-              title="Timezone" 
-              value={fingerprintData.timezone} 
-            />
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Column - Fingerprint */}
+          <div className="lg:col-span-1">
+            <FingerprintDisplay fingerprint={fingerprintData.fingerprint} />
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <InfoCard 
-            title="Language" 
-            value={fingerprintData.language} 
-          />
-          <InfoCard 
-            title="Cookies Enabled" 
-            value={fingerprintData.cookiesEnabled} 
-          />
-          <InfoCard 
-            title="CPU Cores" 
-            value={fingerprintData.hardwareConcurrency} 
-          />
-          <InfoCard 
-            title="Device Memory (GB)" 
-            value={fingerprintData.deviceMemory} 
-          />
-          <InfoCard 
-            title="Browser Plugins" 
-            value={fingerprintData.plugins.join(', ')} 
-          />
+          
+          {/* Right Column - Info Cards */}
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <InfoCard 
+                title="User Agent" 
+                value={fingerprintData.userAgent} 
+                icon="🖥️"
+              />
+              <InfoCard 
+                title="Screen Resolution" 
+                value={fingerprintData.screenResolution} 
+                icon="📱"
+              />
+              <InfoCard 
+                title="Timezone" 
+                value={fingerprintData.timezone} 
+                icon="🌐"
+              />
+              <InfoCard 
+                title="Language" 
+                value={fingerprintData.language} 
+                icon="🗣️"
+              />
+              <InfoCard 
+                title="Cookies Enabled" 
+                value={fingerprintData.cookiesEnabled} 
+                icon="🍪"
+              />
+              <InfoCard 
+                title="CPU Cores" 
+                value={fingerprintData.hardwareConcurrency} 
+                icon="⚙️"
+              />
+              <InfoCard 
+                title="Device Memory (GB)" 
+                value={fingerprintData.deviceMemory} 
+                icon="🧠"
+              />
+              <InfoCard 
+                title="Browser Plugins" 
+                value={fingerprintData.plugins.join(', ')} 
+                icon="🔌"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

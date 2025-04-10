@@ -5,10 +5,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'all': 'all',
+      },
       colors: {
-        primary: '#3b82f6',
-        secondary: '#10b981',
-        dark: '#1e293b',
+        primary: {
+          500: '#6366f1',
+          600: '#4f46e5',
+        },
+        secondary: {
+          500: '#10b981',
+          600: '#059669',
+        },
+        dark: {
+          800: '#1e293b',
+          900: '#0f172a',
+        },
       },
     },
   },
