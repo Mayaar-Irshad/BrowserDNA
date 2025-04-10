@@ -1,38 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="theme-color" content="#1e293b" />
+    
+    <!-- SEO Meta Tags -->
+    <title>BrowserDNA - Discover Your Browser Fingerprint</title>
+    <meta name="description" content="Free browser fingerprinting tool that reveals how websites track you. Check your unique browser fingerprint, privacy exposure level, and tracking vectors." />
+    <meta name="keywords" content="browser fingerprint, privacy tool, web tracking, fingerprint detection, online privacy, browser security" />
+    <meta name="author" content="Your Name" />
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="BrowserDNA - Discover Your Browser Fingerprint" />
+    <meta property="og:description" content="Check your unique browser fingerprint and see how websites track you online with this free privacy tool." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:image" content="%PUBLIC_URL%/social-preview.png" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BrowserDNA - Discover Your Browser Fingerprint" />
+    <meta name="twitter:description" content="Check your unique browser fingerprint and privacy exposure level with this free tool." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/social-preview.png" />
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <!-- Adding Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <title>BrowserDNA</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      
+      "@type": "WebApplication",
+      "name": "BrowserDNA",
+      "description": "Browser fingerprint detection and privacy analysis tool",
+      "url": "https://yourwebsite.com",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any"
+    }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="padding: 20px; text-align: center;">
+        <h1>JavaScript Required</h1>
+        <p>BrowserDNA needs JavaScript to analyze your browser fingerprint. Please enable JavaScript to continue.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    
+    <!-- Google Analytics (optional) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
   </body>
 </html>
