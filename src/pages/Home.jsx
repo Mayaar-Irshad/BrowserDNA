@@ -3,6 +3,7 @@ import useFingerprint from "../hooks/useFingerprint";
 import FingerprintDisplay from "../components/FingerprintDisplay";
 import InfoCard from "../components/InfoCard";
 import ToggleSwitch from "../components/ToggleSwitch";
+import PrivacyExposure from "../components/PrivacyExposure"; 
 
 const Home = () => {
   const [advancedMode, setAdvancedMode] = useState(false);
@@ -30,21 +31,11 @@ const Home = () => {
           <div className="lg:col-span-1 space-y-6">
             <FingerprintDisplay fingerprint={fingerprintData.fingerprint} />
             
-            {/* Privacy Meter */}
-            <div className="bg-white rounded-xl p-4 border border-gray-200">
-              <h3 className="font-medium mb-2">Privacy Exposure</h3>
-              <div className="w-full bg-gray-100 rounded-full h-2.5">
-                <div 
-                  className="bg-red-500 h-2.5 rounded-full transition-all duration-500" 
-                  style={{ width: `${fingerprintData.plugins.length > 0 ? '75%' : '45%'}` }}
-                ></div>
-              </div>
-              <p className="text-xs mt-2 text-gray-500">
-                {fingerprintData.plugins.length > 0 
-                  ? "High (Advanced fingerprinting enabled)" 
-                  : "Medium (Basic fingerprinting)"}
-              </p>
-            </div>
+            {/* Updated Privacy Exposure Component */}
+            <PrivacyExposure 
+              plugins={fingerprintData.plugins} 
+              advancedMode={advancedMode} 
+            />
           </div>
           
           {/* Right Column - Info Cards */}

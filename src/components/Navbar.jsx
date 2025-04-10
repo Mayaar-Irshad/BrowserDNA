@@ -11,7 +11,7 @@ const Navbar = () => {
               BrowserDNA
             </h1>
           </div>
-          <span className="text-sm bg-indigo-500/10 px-3 py-1 rounded-full text-indigo-200">
+          <span className="text-xs sm:text-sm bg-indigo-500/10 px-2 sm:px-3 py-1 rounded-full text-indigo-200">
             Browser Fingerprinting Tool
           </span>
         </div>
