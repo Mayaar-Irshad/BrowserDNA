@@ -1,3 +1,5 @@
+// Home.jsx
+// Main page layout and logic to toggle advanced fingerprinting
 import { useState } from "react";
 import useFingerprint from "../hooks/useFingerprint";
 import FingerprintDisplay from "../components/FingerprintDisplay";
@@ -6,13 +8,15 @@ import ToggleSwitch from "../components/ToggleSwitch";
 import PrivacyExposure from "../components/PrivacyExposure"; 
 
 const Home = () => {
+    // Toggle for basic vs advanced fingerprinting
   const [advancedMode, setAdvancedMode] = useState(false);
+    // Get fingerprint and related browser data
   const fingerprintData = useFingerprint(advancedMode);
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* Header Section */}
+        {/* Header Section with toggle */}
         <div className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Browser Information</h2>
@@ -25,22 +29,22 @@ const Home = () => {
           />
         </div>
 
-        {/* Main Content Grid */}
+            {/* Main content layout: fingerprint + info cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column - Fingerprint & Privacy */}
           <div className="lg:col-span-1 space-y-6">
             <FingerprintDisplay fingerprint={fingerprintData.fingerprint} />
             
-            {/* Updated Privacy Exposure Component */}
             <PrivacyExposure 
               plugins={fingerprintData.plugins} 
               advancedMode={advancedMode} 
             />
           </div>
           
-          {/* Right Column - Info Cards */}
+              {/* Right Column: browser info cards */}
           <div className="lg:col-span-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Each card shows a piece of browser metadata */}
               <InfoCard 
                 title="User Agent" 
                 value={fingerprintData.userAgent} 

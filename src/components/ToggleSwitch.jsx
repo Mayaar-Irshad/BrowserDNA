@@ -1,3 +1,5 @@
+// ToggleSwitch.jsx
+// Reusable toggle component for enabling/disabling advanced mode
 const ToggleSwitch = ({ label, enabled, setEnabled }) => {
   return (
     <div className="flex items-center">

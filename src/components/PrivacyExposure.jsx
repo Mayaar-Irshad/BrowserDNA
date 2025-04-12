@@ -1,10 +1,13 @@
+// privacyExposure.jsx
+
 import React from 'react';
-
+// Displays a privacy exposure rating based on plugin count and mode
 const PrivacyExposure = ({ plugins, advancedMode }) => {
-  // Determine exposure level based on plugins and advanced mode
+  // Determine risk/exposure level based on plugins and advanced mode
   const exposureLevel = advancedMode ? 'high' : 
-                       plugins.length > 0 ? 'medium' : 'low';
-
+                      plugins.length > 0 ? 'medium' : 'low';
+    
+    // Metadata per level
   const exposureData = {
     high: {
       level: 80,
@@ -42,10 +45,11 @@ const PrivacyExposure = ({ plugins, advancedMode }) => {
       overflow-hidden
       group
     ">
-      {/* Gradient header */}
+        {/* Gradient bar based on level */}
       <div className={`h-1 w-full ${current.gradient}`}></div>
       
       <div className="p-5">
+          {/* Header and badge */}
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{current.icon}</span>
@@ -74,7 +78,8 @@ const PrivacyExposure = ({ plugins, advancedMode }) => {
             ></div>
           </div>
         </div>
-
+          
+          {/* Description and factors */}
         <p className="text-sm text-gray-600 mb-3">
           {current.description}
         </p>
@@ -101,7 +106,7 @@ const PrivacyExposure = ({ plugins, advancedMode }) => {
           </ul>
         </div>
 
-        {/* Privacy tip */}
+          {/* Privacy Tip shown on hover */}
         <div className="mt-3 text-xs text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           💡 Tip: {exposureLevel === 'high' 
             ? 'Disable advanced fingerprinting to reduce exposure' 

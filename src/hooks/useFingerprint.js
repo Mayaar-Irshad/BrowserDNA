@@ -1,3 +1,5 @@
+// UseFigerprint.js:
+// Custom hook to collect browser fingerprint data using basic or advanced mode
 import { useState, useEffect } from 'react';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
@@ -17,7 +19,7 @@ const useFingerprint = (advancedMode) => {
   useEffect(() => {
     const getFingerprint = async () => {
       try {
-        // Basic fingerprint data available without the library
+        // // Collect basic browser dataavailable without the library
         const basicData = {
           userAgent: navigator.userAgent,
           screenResolution: `${window.screen.width}x${window.screen.height}`,
@@ -29,7 +31,7 @@ const useFingerprint = (advancedMode) => {
         };
 
         if (advancedMode) {
-          // Load the FingerprintJS library only when advanced mode is enabled
+          // Load the FingerprintJS library only when advanced mode is enabled and get unique ID
           const fp = await FingerprintJS.load();
           const result = await fp.get();
           
@@ -55,7 +57,7 @@ const useFingerprint = (advancedMode) => {
     getFingerprint();
   }, [advancedMode]);
 
-  // Simple hash function for basic fingerprint
+  // Simple hash function for basic fingerprint/fallback ID
   const hashCode = (str) => {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {

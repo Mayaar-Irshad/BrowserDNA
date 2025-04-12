@@ -1,3 +1,5 @@
+// FingerprintDisplay.jsx
+// Visual display of the user's fingerprint
 const FingerprintDisplay = ({ fingerprint }) => {
   const handleCopyFingerprint = () => {
     navigator.clipboard.writeText(fingerprint);
@@ -16,7 +18,7 @@ const FingerprintDisplay = ({ fingerprint }) => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500"></div>
       
       <div className="p-6">
-        {/* Header with icon */}
+          {/* Header with icon and copy button */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="bg-primary-100 p-2 rounded-lg">
@@ -44,7 +46,7 @@ const FingerprintDisplay = ({ fingerprint }) => {
           </button>
         </div>
 
-        {/* Visual fingerprint representation */}
+        {/* Visual/ Decorative fingerprint grid visualization */}
         <div className="mb-4">
           <div className="flex justify-center">
             <div className="grid grid-cols-5 gap-1 w-full max-w-xs">
@@ -70,7 +72,7 @@ const FingerprintDisplay = ({ fingerprint }) => {
           </div>
         </div>
 
-        {/* Fingerprint value with subtle background */}
+        {/* Raw fingerprint value with subtle background */}
         <div className="
           bg-gray-50 p-3 rounded-lg mb-3
           border border-gray-100
