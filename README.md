@@ -1,27 +1,35 @@
-# BrowserDNA - Browser Fingerprinting Tool
+# 🧬 BrowserDNA
 
-![image](https://github.com/user-attachments/assets/92f6e5c9-1d9c-4266-9b70-eaf04b9840b2)
+**BrowserDNA** is a modern browser fingerprinting tool built with React.js and Tailwind CSS. It analyzes your browser’s characteristics, generates a unique fingerprint, and visualizes your privacy exposure level based on trackable data.
 
-*Example of BrowserDNA in action showing browser fingerprint information*
+---
 
-## Overview
+## 🚀 Live Demo
 
-BrowserDNA is a web application that reveals the identifying characteristics of your browser through fingerprinting techniques. It displays various browser attributes that can be used to uniquely identify your device across the web.
+**👉 [Click here to try it live](https://browser-dna.vercel.app/)**  
+_Right-click the link and choose "Open in new tab" for best experience._
 
-## Key Features
+![image](https://github.com/user-attachments/assets/51380331-e462-4a89-aabc-8ad4b28f4969)
 
-- **Comprehensive Fingerprint Analysis**: Displays over 10 browser characteristics
-- **Privacy Exposure Meter**: Visual indicator of tracking risk level
-- **Two Detection Modes**:
-  - Basic mode (default)
-  - Advanced mode (with plugin detection)
-- **Copy Functionality**: Easily copy any fingerprint value
-- **Responsive Design**: Works on all device sizes
-- **Visual Fingerprint Representation**: Color-coded fingerprint visualization
 
-## Technologies Used
+---
 
-- **Frontend**: 
-  - React.js (Create React App)
-  - Tailwind CSS (Styling)
-  - FingerprintJS (Fingerprint generation)
+## 🔍 Features
+
+- Toggle between Basic and Advanced fingerprinting
+- View unique browser fingerprint hash
+- Copy browser info like user-agent, language, CPU cores, etc.
+- Real-time privacy exposure score
+- Responsive and modern UI
+
+---
+
+## 🛠 Built With
+
+- React.js
+- Tailwind CSS
+- FingerprintJS
+
+---
+
+© 2025 IR5H4D
